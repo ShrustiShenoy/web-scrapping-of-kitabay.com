@@ -9,5 +9,7 @@ The goal of this script is to demonstrate basic web scraping techniques, focusin
 To run this script, you need the following Python libraries installed:
 
 requests: For making HTTP requests to fetch the webpage content.
+
 beautifulsoup4: For parsing HTML content.
+
 pandas: For creating a DataFrame and saving data to CSV.
