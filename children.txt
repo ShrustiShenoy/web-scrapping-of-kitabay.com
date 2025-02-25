@@ -1,0 +1,23 @@
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Read the CSV file
+data <- read.csv("children.csv")
+
+# Group data by book titles or categories and calculate counts
+# Replace 'Best_sel' with the appropriate column name if different
+data_summary <- data %>%
+  group_by(Best_sel) %>%
+  summarise(Count = n())
+
+# Create a pie chart using ggplot2
+ggplot(data_summary, aes(x = "", y = Count, fill = Best_sel)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar(theta = "y") +
+  labs(title = "Children's Books", x = NULL, y = NULL, fill = "Book Titles") +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# Save the plot (optional)
+# ggsave("children_books_pie_chart.png")
